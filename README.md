@@ -3,12 +3,12 @@
 > - *The further the player is from the number, the colder they will be🥶.*
 > - *The closer to the number, the hotter!🔥* 
 
-```The following are inputs:```
-- ***Customer Name*** | The customer's name
-- ***Grocery Item*** | The grocery item being purchased
-- ***Unit Price*** | Price of grocery item per unit (e.g., $1)
-- ***Quantity*** | Number of grocery items (e.g., 5 [apples])
-- ***Cash*** | Cash to pay
+```How To Play:```
+Step | Action
+------------- | -------------
+Enter 1-100  | Enter Number Within 1-100!
+Press Enter  | Observe the message!
+Enter new Guess | Continue!
 ```
   
 ## 📩The User Interface!
