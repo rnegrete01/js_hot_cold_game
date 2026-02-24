@@ -14,7 +14,6 @@ Step | Action
 ![2nd_input](images/img_2nd_guess_input_20.png)
 4.) Guess Correctly! | Play Again!
 ![3rd_output](images/img_3rd_output_10.png)
-```
   
 ##ℹ️Important Validation Checks!
 Validation Check | Description
