@@ -13,7 +13,7 @@ Step | Action
 3.) Guess Again | Repeat!
 ![2nd_input](images/img_2nd_guess_input_20.png)
 4.) Guess Correctly! | Play Again!
-rd![3rd_output](images/img_3rd_output_10.png)
+![3rd_output](images/img_3rd_output_10.png)
 ```
   
 ## 📩The User Interface!
