@@ -3,7 +3,7 @@
 > - *The further the player is from the number, the colder they will be🥶.*
 > - *The closer to the number, the hotter!🔥* 
 
-```The following are inputs:
+```The following are inputs:```
 - ***Customer Name*** | The customer's name
 - ***Grocery Item*** | The grocery item being purchased
 - ***Unit Price*** | Price of grocery item per unit (e.g., $1)
