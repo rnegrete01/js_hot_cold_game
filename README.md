@@ -6,9 +6,9 @@
 ```How To Play:```
 Step | Action
 ------------- | -------------
-Enter 1-100  | Enter Number Within 1-100!
-Press Enter  | Observe the message!
-Enter new Guess | Continue!
+1.) Enter 1-100  | Enter Number Within 1-100!
+2.) Press Enter  | Observe the message!
+3.) Guess Again | Repeat!
 ```
   
 ## 📩The User Interface!
