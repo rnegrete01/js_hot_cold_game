@@ -7,8 +7,11 @@
 Step | Action
 ------------- | -------------
 1.) Enter 1-100  | Enter Number Within 1-100!
+![1st_input](images/1st_guess_input_40.png)
 2.) Press Enter  | Observe the message!
+![1st_output](images/img_1st_guess_output_40.png)
 3.) Guess Again | Repeat!
+![2st_input](images/img_2nd_guess_input_20.png)
 ```
   
 ## 📩The User Interface!
