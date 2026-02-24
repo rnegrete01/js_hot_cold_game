@@ -9,15 +9,25 @@
 // global variables
 let randomNum = 0;
 let tries = 0;
+let bestScore = 0;
 const messageLabel = document.querySelector("#message");
 const history = document.querySelector("#history");
+const bestScoreLabel = document.querySelector("#best_score");
 
 // helper function
 const getRandomInt = (max = 100) => {
     let num = Math.random() * max;  // get a random number between 0 and max
-    num = Math.ceil(num);           // round up to nearest integer
+    num = Math.floor(num);
+    num ++;// round up to nearest integer
     return num;
 };
+
+const updateBestScore = () =>{
+    if (bestScore == 0 || tries <= bestScore){
+        bestScore = tries;
+    }
+    bestScoreLabel.textContent = bestScore;
+}
 
 randomNum = getRandomInt();
 
@@ -25,12 +35,6 @@ randomNum = getRandomInt();
 const guessClick = () => {
     const guess = parseInt(document.querySelector("#number").value);
     let message = "";
-
-    const guessHistory = () => {
-        tries ++;
-        history.innerHTML += `Guess ${tries}: ${guess} - ${message}<br>`
-    }
-    guessHistory()
 
     /**
      * I nested my switch inside a breakme block and here's why:
@@ -43,60 +47,67 @@ const guessClick = () => {
      */
 
     //Input Data Validation
-    breakme:{
-        if (isNaN(guess)) {
-            message = "Not a valid number. Please enter a valid number."
-            break breakme;
-        } else if (guess < 1 || guess > 100) {
-            message = "Invalid number. Enter a number between 1 and 100.";
-            break breakme;
-        }
-
-        let distance = randomNum - guess;
-        if (distance < 0) { //we need a positive number for distance. Negatives always smaller = bad.
-            distance *= -1;
-        }
-
-        let color = ""
-        switch (true) {
-            case (distance === 0):
-                const lastWord = (tries === 1) ? "try" : "tries";
-                message = `Bingo! You guessed it in ${tries} ${lastWord}!`;
-                color = "green";
-                break;
-            case (distance <= 5):
-                message = "Hot! You are within 5!"
-                color = "red"
-                break;
-            case (distance <= 10):
-                message = "Warmer!";
-                color = "orangered";
-                break;
-            case (distance <= 20):
-                message = "Warm!"
-                color = "orange"
-                break;
-            case (distance <= 30):
-                message = "Cold!"
-                color = "lightblue"
-                break;
-            case (distance <= 40):
-                message = "Colder!"
-                color = "blue"
-                break;
-            default:
-                color = "darkblue"
-                message = "Your way off!";
-        }
-
-        messageLabel.style.color = color
+    if (isNaN(guess)) {
+        message = "Not a valid number. Please enter a valid number."
+        messageLabel.textContent = message;
+        return;
+    } else if (guess < 1 || guess > 100) {
+        message = "Invalid number. Enter a number between 1 and 100.";
+        messageLabel.textContent = message;
+        return;
     }
-    document.querySelector("#message").textContent = message;
+
+    let distance = randomNum - guess;
+    if (distance < 0) { //we need a positive number for distance. Negatives always smaller = bad.
+        distance *= -1;
+    }
+
+    tries ++;
+
+    let color = ""
+    switch (true) {
+        case (distance === 0):
+            const lastWord = (tries === 1) ? "try" : "tries";
+            message = `Bingo! You guessed it in ${tries} ${lastWord}!`;
+            color = "green";
+            updateBestScore()
+            break;
+        case (distance <= 5):
+            message = "Hot! You are within 5!";
+            color = "red";
+            break;
+        case (distance <= 10):
+            message = "Warmer!";
+            color = "orangered";
+            break;
+        case (distance <= 20):
+            message = "Warm!";
+            color = "orange";
+            break;
+        case (distance <= 30):
+            message = "Cold!";
+            color = "lightblue";
+            break;
+        case (distance <= 40):
+            message = "Colder!";
+            color = "blue";
+            break;
+        default:
+            color = "darkblue";
+            message = "Your way off!";
+
+    }
+
+    messageLabel.style.color = color
+    messageLabel.textContent = message;
+    history.innerHTML += `Guess ${tries}: ${guess} - ${message}<br>`;
 };
+
 
 const playAgainClick = () => {
     randomNum = getRandomInt();
     tries = 0;
+    document.querySelector("#history").textContent = "";
     document.querySelector("#number").value = "";
     document.querySelector("#message").textContent = "";
     console.log(randomNum)
@@ -115,7 +126,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-
     document.querySelector("#play_again").addEventListener(
         "click", playAgainClick);
 });
