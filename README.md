@@ -1,6 +1,7 @@
-﻿# ‼️Description!
-> *This javascript-written program takes multiple inputs from the user and creates a receipt
-that is alerted when the user clicks "Display Receipt"!😊*
+﻿# 📱Game Description [![JavaScript]
+> *-This game generates a random number from 1-100 that the player must guess! As the player gets closer to the number, the message under the guess-box will change as well as the color of the letters!🤩*
+> - *The further the player is from the number, the colder they will be🥶.*
+> - *The closer to the number, the hotter!🔥*stbest 
 
 ```The following are inputs:
 - ***Customer Name*** | The customer's name
