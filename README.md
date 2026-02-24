@@ -15,7 +15,7 @@ Step | Action
 4.) Guess Correctly! | Play Again!
 ![3rd_output](images/img_3rd_output_10.png)
   
-##ℹ️Important Validation Checks!
+## ℹ️Important Validation Checks!
 Validation Check | Description
 ------------- | -------------
 1.) Is a Number?  | Checks if the player's input is a number. If not, they get alerted.
