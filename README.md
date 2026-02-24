@@ -16,7 +16,12 @@ Step | Action
 ![3rd_output](images/img_3rd_output_10.png)
 ```
   
-## 😲Validation Checks!
+##ℹ️Important Validation Checks!
+Validation Check | Description
+------------- | -------------
+1.) Is a Number?  | Checks if the player's input is a number. If not, they get alerted.
+2.) Is within range | Checks if player's input is within 1-100. If not, they get alerted.
+
 
 ## 📚Authors
 👨‍🎓 **Rafael Negrete Fonseca**  
