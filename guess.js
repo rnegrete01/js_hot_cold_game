@@ -10,7 +10,7 @@
 let randomNum = 0;
 let tries = 0;
 const messageLabel = document.querySelector("#message");
-const guessInput = document.querySelector("#guess");
+const history = document.querySelector("#history");
 
 // helper function
 const getRandomInt = (max = 100) => {
@@ -25,6 +25,12 @@ randomNum = getRandomInt();
 const guessClick = () => {
     const guess = parseInt(document.querySelector("#number").value);
     let message = "";
+
+    const guessHistory = () => {
+        tries ++;
+        history.innerHTML += `Guess ${tries}: ${guess} - ${message}<br>`
+    }
+    guessHistory()
 
     /**
      * I nested my switch inside a breakme block and here's why:
@@ -82,6 +88,7 @@ const guessClick = () => {
                 color = "darkblue"
                 message = "Your way off!";
         }
+
         messageLabel.style.color = color
     }
     document.querySelector("#message").textContent = message;
@@ -94,9 +101,6 @@ const playAgainClick = () => {
     document.querySelector("#message").textContent = "";
     console.log(randomNum)
 };
-
-const bestScore = () => {}
-const guessHistory = () => {}
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelector("#guess").addEventListener(
