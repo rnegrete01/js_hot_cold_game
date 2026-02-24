@@ -19,7 +19,7 @@ const getRandomInt = (max = 100) => {
     let num = Math.random() * max;  // get a random number between 0 and max
     num = Math.floor(num);
     num ++;// round up to nearest integer
-    return num; /rasfd
+    return num;
 };
 
 const updateBestScore = () =>{
