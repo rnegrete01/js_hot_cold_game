@@ -21,6 +21,11 @@ Validation Check | Description
 1.) Is a Number?  | Checks if the player's input is a number. If not, they get alerted.
 2.) Is within range | Checks if player's input is within 1-100. If not, they get alerted.
 
+## 🆕New Concepts Used:
+> - *Best score stores player's best game with the lowest guesses*
+> -   *Used a function called "updateBestScore" that handled all the logic*
+> - *Used arrow functions*
+> -   *Example: const updateBestScore = () =>{}*
 
 ## 📚Authors
 👨‍🎓 **Rafael Negrete Fonseca**  
